@@ -87,7 +87,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         keyConstants.strNetworkID = "main";
-        strCurrencyUnits = "ZEC";
+        strCurrencyUnits = "PRTC";
         keyConstants.bip44CoinType = 133; // As registered in https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         consensus.fCoinbaseMustBeShielded = true;
         consensus.nSubsidySlowStartInterval = 20000;
@@ -118,7 +118,13 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_OVERWINTER].nProtocolVersion = 170005;
         consensus.vUpgrades[Consensus::UPGRADE_OVERWINTER].nActivationHeight = 347500;
         consensus.vUpgrades[Consensus::UPGRADE_OVERWINTER].hashActivationBlock =
-            uint256S("0000000003761c0d0c3974b54bdb425613bbb1eaadd6e70b764de82f195ea243");
+            uint256S("00
+// PROTEC modifications
+        consensus.nPreBlossomPowTargetSpacing = 45;
+        consensus.nPostBlossomPowTargetSpacing = 45;
+        consensus.nPreBlossomSubsidyHalvingInterval = 2803200;
+        consensus.nPostBlossomSubsidyHalvingInterval = 2803200;
+00000003761c0d0c3974b54bdb425613bbb1eaadd6e70b764de82f195ea243");
         consensus.vUpgrades[Consensus::UPGRADE_SAPLING].nProtocolVersion = 170007;
         consensus.vUpgrades[Consensus::UPGRADE_SAPLING].nActivationHeight = 419200;
         consensus.vUpgrades[Consensus::UPGRADE_SAPLING].hashActivationBlock =
